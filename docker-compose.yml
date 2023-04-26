@@ -1,0 +1,12 @@
+version: "3"
+services:
+  open_ai:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/var/www/open_ai
+      - /var/www/open_ai/node_modules
